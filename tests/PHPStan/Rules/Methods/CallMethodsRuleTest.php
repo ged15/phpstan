@@ -481,4 +481,8 @@ class CallMethodsRuleTest extends \PHPStan\Rules\AbstractRuleTest
 		$this->analyse([__DIR__ . '/data/order.php'], []);
 	}
 
+    public function testWorks()
+    {
+
+	}
 }

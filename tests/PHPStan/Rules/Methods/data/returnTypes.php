@@ -223,6 +223,27 @@ class Foo extends FooParent implements FooInterface
 		return true;
 		return new mixed();
 	}
+
+    /**
+     * @return \stdClass|false
+     */
+    private function fetchRow()
+    {
+        return false;
+	}
+
+    /**
+     * @return \stdClass[]
+     */
+    public function iterate()
+    {
+        $ret = [];
+        while ($row = $this->fetchRow()) {
+            $ret[] = $row;
+        }
+
+        return $ret;
+	}
 }
 
 class FooChild extends Foo
